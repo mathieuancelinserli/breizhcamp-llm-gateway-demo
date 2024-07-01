@@ -16,7 +16,7 @@
 	"tags": [],
 	"paths": {
 		"/context": {
-			"get": {
+			"post": {
 				"tags": [],
 				"summary": "",
 				"operationId": "getAIContext",
@@ -29,7 +29,7 @@
 			}
 		},
     "/cleanup": {
-			"get": {
+			"post": {
 				"tags": [],
 				"summary": "",
 				"operationId": "getCleanup",
@@ -41,8 +41,8 @@
 				}
 			}
 		},
-    "gdpr": {
-      "get": {
+    "/gdpr": {
+      "post": {
 				"tags": [],
 				"summary": "",
 				"operationId": "getGDPR",
@@ -54,8 +54,8 @@
 				}
 			}
 		},
-    "template": {
-      "get": {
+    "/template": {
+      "post": {
 				"tags": [],
 				"summary": "",
 				"operationId": "getTemplate",
