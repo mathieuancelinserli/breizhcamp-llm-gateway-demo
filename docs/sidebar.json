@@ -1,13 +1,33 @@
 {
-  "docs": [
+	"docs": [
+		{
+			"type": "doc",
+			"id": "index",
+			"label": "Index"
+		},
+		{
+			"type": "doc",
+			"id": "add-context",
+			"label": "Add Context"
+		},
+		{
+			"type": "doc",
+			"id": "prompt-templating",
+			"label": "Prompt templating"
+		},
+		{
+			"type": "doc",
+			"id": "data-cleanup",
+			"label": "Data Cleanup"
+		},
     {
-      "type": "doc",
-      "id": "index",
-      "label": "Index"
-    },
-    {
-      "type": "api-ref",
-      "label": "API Reference"
-    }
-  ]
+			"type": "doc",
+			"id": "gdpr",
+			"label": "Data anonymisation"
+		},
+		{
+			"type": "api-ref",
+			"label": "API Reference"
+		}
+	]
 }

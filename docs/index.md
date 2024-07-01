@@ -1,10 +1,11 @@
-# My TODO API
+# My super cool API gateway powered by AI
 
 You can write full markdown in these documents. Syntax highlighting and full
 Github Flavored markdown are supported. 
 
 ```ts
-const response = await fetch("https://${YOUR_SERVERLESS_DOMAIN}.cloud-apim.dev", {
+const response = await fetch(https://${environment.HOST}, 
+{
   headers: {
     "content-type": "application/json",
   },
