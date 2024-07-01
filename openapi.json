@@ -1,0 +1,222 @@
+{
+	"openapi": "3.1.0",
+	"info": {
+		"title": "AI Plugins for Cloud-APIM Serverless Projects",
+		"version": "1.0.0",
+		"description": "An easy getting started project template to use AI in your Cloud-APIM Serverless projects",
+		"contact": {
+			"name": "Cloud APIM Default contact address",
+			"url": "https://www.cloud-apim.com",
+			"email": "contact@cloud-apim.com"
+		},
+		"x-logo-none": {
+			"url": "https://www.cloud-apim.com/assets/logo/cloud-apim-logo-inverted.png"
+		}
+	},
+	"tags": [],
+	"paths": {
+		"/context": {
+			"get": {
+				"tags": [],
+				"summary": "",
+				"operationId": "getAIContext",
+				"x-cloud-apim-backend": {
+					"$ref": "#/components/x-cloud-apim-backends/mirror"
+				},
+				"x-cloud-apim-plugins": {
+					"$ref": "#/components/x-cloud-apim-plugins/context"
+				}
+			}
+		},
+    "/cleanup": {
+			"get": {
+				"tags": [],
+				"summary": "",
+				"operationId": "getCleanup",
+				"x-cloud-apim-backend": {
+					"$ref": "#/components/x-cloud-apim-backends/mirror"
+				},
+				"x-cloud-apim-plugins": {
+					"$ref": "#/components/x-cloud-apim-plugins/cleanup"
+				}
+			}
+		},
+    "gdpr": {
+      "get": {
+				"tags": [],
+				"summary": "",
+				"operationId": "getGDPR",
+				"x-cloud-apim-backend": {
+					"$ref": "#/components/x-cloud-apim-backends/mirror"
+				},
+				"x-cloud-apim-plugins": {
+					"$ref": "#/components/x-cloud-apim-plugins/gdpr"
+				}
+			}
+		},
+    "template": {
+      "get": {
+				"tags": [],
+				"summary": "",
+				"operationId": "getTemplate",
+				"x-cloud-apim-backend": {
+					"$ref": "#/components/x-cloud-apim-backends/mirror"
+				},
+				"x-cloud-apim-plugins": {
+					"$ref": "#/components/x-cloud-apim-plugins/template"
+				}
+			}
+		}
+	},
+	"components": {
+		"x-cloud-apim-plugins": {
+			"context": [
+				{
+					"enabled": true,
+					"debug": false,
+					"plugin": "cp:otoroshi.next.plugins.OverrideHost",
+					"include": [],
+					"exclude": [],
+					"config": {},
+					"bound_listeners": [],
+					"plugin_index": {
+						"transform_request": 0
+					}
+				},
+				{
+					"enabled": true,
+					"debug": false,
+					"plugin": "cp:otoroshi_plugins.com.cloud.apim.otoroshi.extensions.aigateway.plugins.AiLlmProxy",
+					"include": [],
+					"exclude": [],
+					"config": {
+						"ref": "provider-openai"
+					},
+					"bound_listeners": [],
+					"plugin_index": {}
+				},
+				{
+					"enabled": true,
+					"debug": false,
+					"plugin": "cp:otoroshi_plugins.com.cloud.apim.otoroshi.extensions.aigateway.plugins.AiPromptContext",
+					"include": [],
+					"exclude": [],
+					"config": {
+						"ref": "context-breizhcamp"
+					},
+					"bound_listeners": [],
+					"plugin_index": {
+						"transform_request": 1
+					}
+				}
+			],
+      "cleanup": [
+        {
+          "enabled" : true,
+          "debug" : false,
+          "plugin" : "cp:otoroshi.next.plugins.OverrideHost",
+          "include" : [ ],
+          "exclude" : [ ],
+          "config" : { },
+          "bound_listeners" : [ ],
+          "plugin_index" : {
+            "transform_request" : 0
+          }
+        }, {
+          "enabled" : true,
+          "debug" : false,
+          "plugin" : "cp:otoroshi_plugins.com.cloud.apim.otoroshi.extensions.aigateway.plugins.AiResponseBodyModifier",
+          "include" : [ ],
+          "exclude" : [ ],
+          "config" : {
+            "ref" : "provider-openai",
+            "prompt" : "Response with the same json but with any credit card number masked out and add the type of credit card between parenthesis (Visa, Mastercard, etc)",
+            "is_response" : false,
+            "prompt_ref" : null,
+            "context_ref" : null,
+            "extractor" : null
+          },
+          "bound_listeners" : [ ],
+          "plugin_index" : {
+            "transform_response" : 0
+          }
+        }
+      ],
+      "gdpr" : [
+        {
+          "enabled" : true,
+          "debug" : false,
+          "plugin" : "cp:otoroshi.next.plugins.OverrideHost",
+          "include" : [ ],
+          "exclude" : [ ],
+          "config" : { }
+        }, {
+          "enabled" : true,
+          "debug" : false,
+          "plugin" : "cp:otoroshi_plugins.com.cloud.apim.otoroshi.extensions.aigateway.plugins.AiResponseBodyModifier",
+          "include" : [ ],
+          "exclude" : [ ],
+          "config" : {
+            "ref" : "provider-openai",
+            "prompt" : "Replace any personal informations from the incoming JSON message with fake informations. Only return transformed JSON, nothing else",
+            "is_response" : false,
+            "prompt_ref" : null,
+            "context_ref" : null,
+            "extractor" : null
+          }
+        } 
+      ],
+      "template": [
+        {
+          "enabled" : true,
+          "debug" : false,
+          "plugin" : "cp:otoroshi.next.plugins.OverrideHost",
+          "include" : [ ],
+          "exclude" : [ ],
+          "config" : { },
+          "bound_listeners" : [ ],
+          "plugin_index" : {
+            "transform_request" : 0
+          }
+        }, {
+          "enabled" : true,
+          "debug" : false,
+          "plugin" : "cp:otoroshi_plugins.com.cloud.apim.otoroshi.extensions.aigateway.plugins.AiLlmProxy",
+          "include" : [ ],
+          "exclude" : [ ],
+          "config" : {
+            "ref" : "provider-openai"
+          },
+          "bound_listeners" : [ ],
+          "plugin_index" : { }
+        }, {
+          "enabled" : true,
+          "debug" : false,
+          "plugin" : "cp:otoroshi_plugins.com.cloud.apim.otoroshi.extensions.aigateway.plugins.AiPromptTemplate",
+          "include" : [ ],
+          "exclude" : [ ],
+          "config" : {
+            "ref" : "prompt-template-translator"
+          },
+          "bound_listeners" : [ ],
+          "plugin_index" : {
+            "transform_request" : 1
+          }
+        }
+      ]
+		},
+		"x-cloud-apim-backends": {
+			"mirror": {
+				"targets": [
+					{
+						"hostname": "mirror.otoroshi.io",
+						"port": 443,
+						"tls": true
+					}
+				],
+				"root": "/",
+				"rewrite": false
+			}
+		}
+	}
+}
