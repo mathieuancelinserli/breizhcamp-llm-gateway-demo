@@ -24,6 +24,20 @@
 			"type": "doc",
 			"id": "gdpr",
 			"label": "Data anonymisation"
+		},{
+			"type": "doc",
+			"id": "enrich-data",
+			"label": "Data Enrichment"
+		},
+    {
+			"type": "doc",
+			"id": "mock",
+			"label": "Mock Responses"
+		},
+    {
+			"type": "doc",
+			"id": "websockets",
+			"label": "WebSockets"
 		},
 		{
 			"type": "api-ref",
