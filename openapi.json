@@ -606,7 +606,7 @@
             }
           }
         }
-      }
+      },
       "LLMResponse": {
         "description": "A response provided by a LLM API. The same format for any provider used.",
         "type": "object",
