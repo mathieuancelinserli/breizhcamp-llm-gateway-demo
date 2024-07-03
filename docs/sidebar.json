@@ -8,12 +8,12 @@
 		{
 			"type": "doc",
 			"id": "add-context",
-			"label": "Add Context"
+			"label": "Demo 1 - Prompt Context"
 		},
 		{
 			"type": "doc",
 			"id": "prompt-templating",
-			"label": "Prompt templating"
+			"label": "Demo 2 - Prompt templating"
 		},
 		{
 			"type": "doc",
