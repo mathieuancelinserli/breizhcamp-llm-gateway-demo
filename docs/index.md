@@ -4,7 +4,7 @@ You can write full markdown in these documents. Syntax highlighting and full
 Github Flavored markdown are supported. 
 
 ```ts
-const response = await fetch(https://${environment.HOST}, 
+const response = await fetch("https://${environment.HOST}", 
 {
   headers: {
     "content-type": "application/json",
