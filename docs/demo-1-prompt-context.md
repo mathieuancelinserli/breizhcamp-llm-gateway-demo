@@ -1,7 +1,8 @@
 # Add context to your API
 
-```js
+TODO: description
 
+```js
 const response = await fetch("https://${environment.HOST}/context", {
   method: 'post',
   headers: {
@@ -20,4 +21,6 @@ const response = await fetch("https://${environment.HOST}/context", {
 const data = await response.json();
 console.log(data);
 ```
+
+## TODO result
 

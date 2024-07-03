@@ -1,5 +1,7 @@
 # Access validation
 
+TODO: description
+
 ```js
 const response = await fetch("https://${environment.HOST}/access", {
   headers: {
@@ -9,3 +11,5 @@ const response = await fetch("https://${environment.HOST}/access", {
 const data = await response.json();
 console.log(data);
 ```
+
+## TODO result

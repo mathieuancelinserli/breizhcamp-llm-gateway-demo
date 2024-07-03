@@ -1,5 +1,7 @@
 # Data Cleanup
 
+TODO: description
+
 ```js
 const response = await fetch("https://${environment.HOST}/cleanup", {
   method: 'post',
@@ -14,3 +16,5 @@ const response = await fetch("https://${environment.HOST}/cleanup", {
 const data = await response.json();
 console.log(data);
 ```
+
+## TODO result

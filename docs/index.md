@@ -1,5 +1,9 @@
 # Otoroshi LLM Extension in action - Cloud APIM Serverless
 
+TODO: description
+
+TODO: video
+
 the API hosting this demo is located at
 
 ```sh

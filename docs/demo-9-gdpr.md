@@ -1,6 +1,8 @@
 # Data Anonymisation
 
-```ts
+TODO: description
+
+```js
 const response = await fetch("https://${environment.HOST}/gdpr", {
   method: 'post',
   headers: {
@@ -18,3 +20,5 @@ const response = await fetch("https://${environment.HOST}/gdpr", {
 const data = await response.json();
 console.log(data);
 ```
+
+## TODO result

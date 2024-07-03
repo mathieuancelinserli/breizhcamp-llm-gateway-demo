@@ -1,5 +1,7 @@
 # Data enrichment
 
+TODO: description
+
 ```js
 const response = await fetch("https://${environment.HOST}/enrich", {
   method: 'post',
@@ -14,3 +16,5 @@ const response = await fetch("https://${environment.HOST}/enrich", {
 const data = await response.json();
 console.log(data);
 ```
+
+## TODO result
