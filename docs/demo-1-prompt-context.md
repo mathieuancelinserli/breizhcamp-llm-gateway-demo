@@ -11,7 +11,7 @@ const response = await fetch("https://${environment.HOST}/context", {
     "messages": [
       {
         "role": "user",
-        "content": "peux tu m'en dire plus sur la societe cloud apim ?"
+        "content": "Can you tell me more about the Cloud APIM company ?"
       }
     ]
   })
