@@ -1,20 +1,10 @@
 {
   "enabled": true,
   "auth": true,
-  "title": "Cloud APIM Developer Portal - AI Plugins",
+  "title": "Otoroshi LLM Extension demo",
   "examples": true,
   "path": "/docs",
   "icon": "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "max_user_created_apikeys": 0,
-  "plans": [
-    {
-      "id": "default",
-      "name": "default",
-      "default": true,
-      "description": "The default apikey plan",
-      "throttling": 100,
-      "daily": "10000",
-      "monthly": "10000"
-    }
-  ]
+  "plans": []
 }

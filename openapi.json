@@ -1,16 +1,13 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "AI Plugins for Cloud-APIM Serverless Projects",
+    "title": "Otoroshi LLM Extension demo",
     "version": "1.0.0",
     "description": "An easy getting started project template to use AI in your Cloud-APIM Serverless projects",
     "contact": {
       "name": "Cloud APIM Default contact address",
       "url": "https://www.cloud-apim.com",
       "email": "contact@cloud-apim.com"
-    },
-    "x-logo-none": {
-      "url": "https://www.cloud-apim.com/assets/logo/cloud-apim-logo-inverted.png"
     }
   },
   "tags": [],
@@ -78,10 +75,10 @@
         "parameters": [],
         "requestBody": null,
         "x-cloud-apim-plugins": {
-          "$ref": "#/components/x-cloud-apim-plugins/defaultPlugins"
+          "$ref": "#/components/x-cloud-apim-plugins/mock"
         },
         "x-cloud-apim-backend": {
-          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+          "$ref": "#/components/x-cloud-apim-backends/mirror"
         }
       }
     },
@@ -94,10 +91,10 @@
         "tags": [],
         "responses": {},
         "x-cloud-apim-plugins": {
-          "$ref": "#/components/x-cloud-apim-plugins/defaultPlugins"
+          "$ref": "#/components/x-cloud-apim-plugins/access"
         },
         "x-cloud-apim-backend": {
-          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+          "$ref": "#/components/x-cloud-apim-backends/mirror"
         }
       }
     },
@@ -110,10 +107,10 @@
         "tags": [],
         "responses": {},
         "x-cloud-apim-plugins": {
-          "$ref": "#/components/x-cloud-apim-plugins/defaultPlugins"
+          "$ref": "#/components/x-cloud-apim-plugins/enrich"
         },
         "x-cloud-apim-backend": {
-          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+          "$ref": "#/components/x-cloud-apim-backends/mirror"
         }
       }
     }
@@ -218,6 +215,81 @@
           }
         }
       ],
+      "enrich": [
+        {
+          "enabled": true,
+          "debug": false,
+          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
+          "include": [],
+          "exclude": [],
+          "config": {}
+        },
+        {
+          "enabled": true,
+          "debug": false,
+          "plugin": "cp:otoroshi_plugins.com.cloud.apim.otoroshi.extensions.aigateway.plugins.AiRequestBodyModifier",
+          "include": [],
+          "exclude": [],
+          "config": {
+            "ref": "provider-openai",
+            "prompt": "in my JSON message, anywhere there is a JSON object with a \"city\" field without a \"country\" field, please add the \"country\" field in which the city resides. Only return the JSON message, no extra text",
+            "is_response": false,
+            "prompt_ref": null,
+            "context_ref": null,
+            "extractor": null
+          }
+        }
+      ],
+      "access": [
+        {
+          "enabled": true,
+          "debug": false,
+          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
+          "include": [],
+          "exclude": [],
+          "config": {}
+        },
+        {
+          "enabled": true,
+          "debug": false,
+          "plugin": "cp:otoroshi_plugins.com.cloud.apim.otoroshi.extensions.aigateway.plugins.AiContextValidator",
+          "include": [],
+          "exclude": [],
+          "config": {
+            "ref": "provider-openai",
+            "prompt": "if the current request has a header named \"admin\" and this header has a value set to \"true\", respond with \"true\". If not, respond with \"false\". Do not add anything else",
+            "is_response": false,
+            "prompt_ref": null,
+            "context_ref": null,
+            "extractor": null
+          }
+        }
+      ],
+      "mock": [
+        {
+          "enabled": true,
+          "debug": false,
+          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
+          "include": [],
+          "exclude": [],
+          "config": {}
+        },
+        {
+          "enabled": true,
+          "debug": false,
+          "plugin": "cp:otoroshi_plugins.com.cloud.apim.otoroshi.extensions.aigateway.plugins.AiResponseGenerator",
+          "include": [],
+          "exclude": [],
+          "config": {
+            "ref": "provider-openai",
+            "prompt": "generate an array of 5 json objects. Those objects represents users with an email field, a name field, an age and an address. Only return json, no additional text",
+            "is_response": false,
+            "prompt_ref": null,
+            "context_ref": null,
+            "extractor": null
+          }
+        }
+      ],
       "template": [
         {
           "enabled": true,
@@ -258,18 +330,7 @@
           }
         }
       ],
-      "defaultPlugins": [
-        {
-          "plugin": "cp:otoroshi.next.plugins.ApikeyCalls",
-          "enabled": true,
-          "config": {}
-        },
-        {
-          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
-          "enabled": true,
-          "config": {}
-        }
-      ]
+      "defaultPlugins": []
     },
     "x-cloud-apim-backends": {
       "mirror": {
