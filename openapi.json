@@ -18,7 +18,28 @@
         "summary": "",
         "description": "This endpoint demonstrates how to add context to a prompt sent to an LLM API provider. In this particular case it provides a definition of what is Cloud APIM.",
         "operationId": "add-context-to-prompt",
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": "LLM Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LLMResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
         "x-cloud-apim-backend": {
           "$ref": "#/components/x-cloud-apim-backends/mirror"
         },
@@ -32,6 +53,28 @@
         "tags": ["egress-proxy-pattern"],
         "summary": "",
         "operationId": "prompt-templating",
+        "responses": {
+          "200": {
+            "description": "LLM Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LLMResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
         "x-cloud-apim-backend": {
           "$ref": "#/components/x-cloud-apim-backends/mirror"
         },
@@ -455,7 +498,97 @@
         ]
       }
     },
-    "schemas": {},
+    "schemas": {
+      "LLMResponse": {
+        "description": "A response provided by a LLM API. The same format for any provider used.",
+        "type": "object",
+        "properties": {
+          "generations": {
+            "type": "array",
+            "item": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "message": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "role": {
+                      "description": "",
+                      "type": "string",
+                      "examples": ["system", "user"]
+                    },
+                    "content": {
+                      "description": "",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "metadata": {
+            "description": "",
+            "type": "object",
+            "properties": {
+              "usage": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "prompt_tokens": {
+                    "description": "",
+                    "type": "number"
+                  },
+                  "generation_tokens": {
+                    "description": "",
+                    "type": "number"
+                  }
+                }
+              },
+              "rate_limit": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "requests_limit": {
+                    "description": "",
+                    "type": "number"
+                  },
+                  "requests_remaining": {
+                    "description": "",
+                    "type": "number"
+                  },
+                  "tokens_limit": {
+                    "description": "",
+                    "type": "number"
+                  },
+                  "tokens_remaining": {
+                    "description": "",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Error": {
+        "description": "Object representing an error",
+        "type": "object",
+        "properties": {
+          "code": {
+            "format": "int32",
+            "description": "Error code that identify of the error",
+            "type": "integer",
+            "examples": ["1000"]
+          },
+          "message": {
+            "description": "Short description of the error",
+            "type": "string",
+            "examples": ["Could not perform the task"]
+          }
+        }
+      }
+    },
     "x-cloud-apim-frontends": {}
   }
 }
