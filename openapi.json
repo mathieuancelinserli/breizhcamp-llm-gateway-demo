@@ -45,7 +45,7 @@
         "summary": "",
         "deprecated": false,
         "description": "",
-        "operationId": "",
+        "operationId": "generate-mock-data",
         "tags": ["end-users"],
         "responses": {},
         "parameters": [],
@@ -81,7 +81,7 @@
         "summary": "",
         "deprecated": false,
         "description": "",
-        "operationId": "",
+        "operationId": "access-validation",
         "tags": ["end-users"],
         "responses": {},
         "x-cloud-apim-plugins": {
@@ -97,7 +97,7 @@
         "summary": "",
         "deprecated": false,
         "description": "",
-        "operationId": "",
+        "operationId": "data-enrichment",
         "tags": ["end-users"],
         "responses": {},
         "x-cloud-apim-plugins": {
@@ -112,7 +112,7 @@
       "post": {
         "tags": ["end-users"],
         "summary": "",
-        "operationId": "getCleanup",
+        "operationId": "data-cleanup",
         "x-cloud-apim-backend": {
           "$ref": "#/components/x-cloud-apim-backends/mirror"
         },
@@ -143,7 +143,7 @@
       "post": {
         "tags": ["end-users"],
         "summary": "",
-        "operationId": "getGDPR",
+        "operationId": "personal-informations-anonymization",
         "x-cloud-apim-backend": {
           "$ref": "#/components/x-cloud-apim-backends/mirror"
         },
