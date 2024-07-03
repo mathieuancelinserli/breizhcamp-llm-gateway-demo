@@ -540,12 +540,10 @@
           "messages": {
             "type": "array",
             "examples": [
-              [
-                {
-                  "role": "user",
-                  "content": "Hello there"
-                }
-              ]
+              {
+                "role": "user",
+                "content": "Hello there"
+              }
             ],
             "item": {
               "description": "",
