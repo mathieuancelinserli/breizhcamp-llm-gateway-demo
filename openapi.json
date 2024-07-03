@@ -42,8 +42,12 @@
         },
         "requestBody": {
           "description": "LLM Request prompt",
-          "schema": {
-            "$ref": "#/components/schemas/LLMRequest"
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LLMRequest"
+              }
+            }
           }
         },
         "x-cloud-apim-backend": {
@@ -83,16 +87,24 @@
         },
         "requestBody": {
           "description": "The translator request",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "lang": {
-                "description": "the language to translate to",
-                "type": "string"
-              },
-              "text": {
-                "description": "the text to translate",
-                "type": "string"
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "examples": [{
+                  "lang": "fr",
+                  "text": "Hello World !"
+                }],
+                "properties": {
+                  "lang": {
+                    "description": "the language to translate to",
+                    "type": "string"
+                  },
+                  "text": {
+                    "description": "the text to translate",
+                    "type": "string"
+                  }
+                }
               }
             }
           }
