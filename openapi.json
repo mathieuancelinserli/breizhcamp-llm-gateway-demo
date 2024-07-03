@@ -40,6 +40,12 @@
             }
           }
         },
+        "requestBody": {
+          "description": "LLM Request prompt",
+          "schema": {
+            "$ref": "#/components/schemas/LLMRequest"
+          }
+        },
         "x-cloud-apim-backend": {
           "$ref": "#/components/x-cloud-apim-backends/mirror"
         },
@@ -71,6 +77,22 @@
                 "schema": {
                   "$ref": "#/components/schemas/Error"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "description": "The translator request",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "lang": {
+                "description": "the language to translate to",
+                "type": "string"
+              },
+              "text": {
+                "description": "the text to translate",
+                "type": "string"
               }
             }
           }
@@ -499,6 +521,92 @@
       }
     },
     "schemas": {
+      "LLMRequest": {
+        "description": "A query provided to a LLM API. The same format for any provider used.",
+        "type": "object",
+        "properties": {
+          "messages": {
+            "type": "array",
+            "examples": [
+              [
+                {
+                  "message": {
+                    "role": "user",
+                    "content": "Hello there"
+                  }
+                }
+              ]
+            ],
+            "item": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "message": {
+                  "description": "",
+                  "type": "object",
+                  "examples": [{
+                    "role": "user",
+                    "content": "Hello there"
+                  }],
+                  "properties": {
+                    "role": {
+                      "description": "",
+                      "type": "string",
+                      "examples": ["system", "user"]
+                    },
+                    "content": {
+                      "description": "",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "metadata": {
+            "description": "",
+            "type": "object",
+            "properties": {
+              "usage": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "prompt_tokens": {
+                    "description": "",
+                    "type": "number"
+                  },
+                  "generation_tokens": {
+                    "description": "",
+                    "type": "number"
+                  }
+                }
+              },
+              "rate_limit": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "requests_limit": {
+                    "description": "",
+                    "type": "number"
+                  },
+                  "requests_remaining": {
+                    "description": "",
+                    "type": "number"
+                  },
+                  "tokens_limit": {
+                    "description": "",
+                    "type": "number"
+                  },
+                  "tokens_remaining": {
+                    "description": "",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
       "LLMResponse": {
         "description": "A response provided by a LLM API. The same format for any provider used.",
         "type": "object",
