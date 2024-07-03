@@ -150,6 +150,16 @@
                 }
               }
             }
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         },
         "parameters": [],
@@ -173,7 +183,9 @@
           "200": {
             "content": {
               "text/html": {
-                "description": "just a plain old html page"
+                "description": "just a plain old html page",
+                "type": "string",
+                "examples": ["<html>...</html>"]
               }
             }
           },
@@ -262,6 +274,28 @@
             }
           }
         },
+        "requestBody": {
+          "description": "a request body to enrich",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "examples": [{
+                  "email": "contact@cloud-apim.com",
+                  "city": "Poitiers"
+                }],
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
         "x-cloud-apim-plugins": {
           "$ref": "#/components/x-cloud-apim-plugins/enrich"
         },
@@ -291,6 +325,24 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "description": "a request body to cleanup",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "examples": [{
+                  "credit_card": "4035501000000008"
+                }],
+                "properties": {
+                  "credit_card": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -343,6 +395,43 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "description": "a request body to anonymize",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "examples": [{
+                  "name": "Mathieu ANCELIN",
+                  "age": 38,
+                  "role": "speaker",
+                  "languages": ["scala", "java", "javascript", "rust"],
+                  "email": "mathieu.ancelin@cloud-apim.com"
+                }],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "age": {
+                    "type": "number"
+                  },
+                  "languages": {
+                    "type": "array",
+                    "item": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
