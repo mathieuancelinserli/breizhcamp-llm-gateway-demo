@@ -20,3 +20,4 @@ const response = await fetch("https://${environment.HOST}/context", {
 const data = await response.json();
 console.log(data);
 ```
+
