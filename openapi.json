@@ -130,7 +130,7 @@
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "item": {
+                  "items": {
                     "type": "object",
                     "properties": {
                       "email": {
@@ -163,7 +163,6 @@
           }
         },
         "parameters": [],
-        "requestBody": null,
         "x-cloud-apim-plugins": {
           "$ref": "#/components/x-cloud-apim-plugins/mock"
         },
@@ -182,11 +181,7 @@
         "responses": {
           "200": {
             "content": {
-              "text/html": {
-                "description": "just a plain old html page",
-                "type": "string",
-                "examples": ["<html>...</html>"]
-              }
+              "text/html": {}
             }
           },
           "default": {
@@ -201,7 +196,6 @@
           }
         },
         "parameters": [],
-        "requestBody": null,
         "x-cloud-apim-plugins": {
           "$ref": "#/components/x-cloud-apim-plugins/uimock"
         },
@@ -363,9 +357,12 @@
         "description": "This endpoint validate websocket messages to avoid crude language or hate speech",
         "operationId": "validate-websocket-messages",
         "tags": ["end-users"],
-        "responses": {},
+        "responses": {
+          "101": {
+            "description": "switching to websocket protocol"
+          }
+        },
         "parameters": [],
-        "requestBody": null,
         "x-cloud-apim-plugins": {
           "$ref": "#/components/x-cloud-apim-plugins/websocket"
         },
@@ -381,6 +378,7 @@
         "operationId": "personal-informations-anonymization",
         "responses": {
           "200": {
+            "description": "anonymized response",
             "content": {
               "application/json": {
                 "schema": {
@@ -428,7 +426,7 @@
                   },
                   "languages": {
                     "type": "array",
-                    "item": {
+                    "items": {
                       "type": "string"
                     }
                   }
@@ -791,7 +789,7 @@
                 "content": "Hello there"
               }
             ]],
-            "item": {
+            "items": {
               "description": "",
               "type": "object",
               "examples": [{
@@ -829,7 +827,7 @@
                 }
               ]
             ],
-            "item": {
+            "items": {
               "description": "",
               "type": "object",
               "properties": {
