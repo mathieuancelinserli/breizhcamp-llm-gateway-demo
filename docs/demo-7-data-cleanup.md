@@ -1,14 +1,14 @@
 # Data Cleanup
 
-```ts
-const response = await fetch(https://${environment.HOST}/cleanup, 
-{
+```js
+const response = await fetch("https://${environment.HOST}/cleanup", {
+  method: 'post',
   headers: {
     "content-type": "application/json",
   },
-  body: {
-    "message": "test"
-  }
+  body: JSON.stringify({
+    "credit_card":"4035501000000008"
+  })
 });
 
 const data = await response.json();

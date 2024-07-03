@@ -1,14 +1,15 @@
 # Prompt Templating
 
-```ts
-const response = await fetch(https://${environment.HOST}/template, 
-{
+```js
+const response = await fetch("https://${environment.HOST}/template", {
+  method: 'post',
   headers: {
     "content-type": "application/json",
   },
-  body: {
-    "message": "test"
-  }
+  body: JSON.stringify({
+    "lang": "fr",
+    "text": "Hello World !"
+  })
 });
 
 const data = await response.json();

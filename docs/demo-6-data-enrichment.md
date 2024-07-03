@@ -1,16 +1,16 @@
 # Data enrichment
 
-```ts
-const response = await fetch(https://${environment.HOST}/enrich, 
-{
+```js
+const response = await fetch("https://${environment.HOST}/enrich", {
+  method: 'post',
   headers: {
     "content-type": "application/json",
   },
-  body: {
-    "message": "test"
-  }
+  body: JSON.stringify({
+    "email": "mathieu.ancelin@cloud-apim.com",
+    "city": "Poitiers"
+  })
 });
-
 const data = await response.json();
 console.log(data);
 ```
