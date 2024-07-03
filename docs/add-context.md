@@ -1,14 +1,20 @@
 # Add context to your API
 
-```ts
-const response = await fetch(https://${environment.HOST}/context, 
-{
+```js
+
+const response = await fetch("https://${environment.HOST}/context", {
+  method: 'post',
   headers: {
     "content-type": "application/json",
   },
-  body: {
-    "message": "Connais-tu le BreizhCamp ???"
-  }
+  body: JSON.stringify({
+    "messages": [
+      {
+        "role": "user",
+        "content": "peux tu m'en dire plus sur la societe cloud apim ?"
+      }
+    ]
+  })
 });
 
 const data = await response.json();

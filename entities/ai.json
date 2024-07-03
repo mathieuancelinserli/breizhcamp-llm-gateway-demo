@@ -42,14 +42,14 @@
 			"teams": ["default"]
 		},
 		"id": "context-breizhcamp",
-		"name": "Breizhcamp",
+		"name": "Cloud APIM",
 		"description": "",
 		"metadata": {},
 		"tags": [],
 		"messages": [
 			{
 				"role": "system",
-				"content": "Breizhcamp is a developer conference taking place in Rennes (Brittany). It's focused on languages, tooling, etc."
+				"content": "Cloud APIM is a french company that provides API Management as a Service through managed Otoroshi instances, Serverless projects, etc"
 			}
 		],
 		"kind": "AiPromptContext"

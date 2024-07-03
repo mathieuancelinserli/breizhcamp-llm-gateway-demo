@@ -3,7 +3,7 @@
   "info": {
     "title": "Otoroshi LLM Extension demo",
     "version": "1.0.0",
-    "description": "An easy getting started project template to use AI in your Cloud-APIM Serverless projects",
+    "description": "How to use the Otoroshi LLM Extension in your Cloud APIM Serverless projects",
     "contact": {
       "name": "Cloud APIM Default contact address",
       "url": "https://www.cloud-apim.com",
@@ -14,9 +14,10 @@
   "paths": {
     "/context": {
       "post": {
-        "tags": [],
+        "tags": ["egress-proxy-pattern"],
         "summary": "",
-        "operationId": "getAIContext",
+        "description": "This endpoint demonstrates how to add context to a prompt sent to an LLM API provider. In this particular case it provides a definition of what is Cloud APIM.",
+        "operationId": "addContextToPrompt",
         "x-cloud-apim-backend": {
           "$ref": "#/components/x-cloud-apim-backends/mirror"
         },
