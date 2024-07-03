@@ -566,12 +566,12 @@
         "properties": {
           "messages": {
             "type": "array",
-            "examples": [
+            "examples": [[
               {
                 "role": "user",
                 "content": "Hello there"
               }
-            ],
+            ]],
             "item": {
               "description": "",
               "type": "object",
