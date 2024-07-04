@@ -10,7 +10,16 @@
       "email": "contact@cloud-apim.com"
     }
   },
-  "tags": [],
+  "tags": [
+    {
+      "name": "egress-proxy-pattern",
+      "description": "All the use cases for people that uses a LLM in their application already. In that case Otoroshi is used to proxy the LLM API and apply various controls"
+    },
+    {
+      "name": "end-users",
+      "description": "All the use cases for people that do not use a LLM in their application already. In that case we use the LLM to configure the gateway using natural language"
+    }
+  ],
   "paths": {
     "/context": {
       "post": {
