@@ -1,6 +1,6 @@
 # Access validation
 
-TODO: description
+Here we use the LLM to validate user access. The LLM has the full request representation sent to it and is able to evaluate access rules based on your prompt. Here we use a header but you can express complexe rules with very specific conditions.
 
 ## Call the API
 

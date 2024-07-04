@@ -1,6 +1,6 @@
 # Data enrichment
 
-TODO: description
+Here with use the LLM to add missing data in an http request before the request hits your API. In this case, it add the country in the request payload based on the city mentionned in the payload.
 
 ## Call the API
 

@@ -1,6 +1,6 @@
 # WebSockets message validation
 
-TODO: description
+In this demo, we use a LLM to validate message sent over websocket in a chat room or something similar to avoid crude language or hate speech.
 
 ## Call the API
 

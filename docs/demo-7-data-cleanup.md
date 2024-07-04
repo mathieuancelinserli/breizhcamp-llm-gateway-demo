@@ -1,6 +1,6 @@
 # Data Cleanup
 
-TODO: description
+Here we use the LLM to hide sensitive informations to avoid data leaks. In this particular case, the LLM hides a credit card number and add contextual informations about the card.
 
 ## Call the API
 

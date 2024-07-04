@@ -1,6 +1,6 @@
 # Data Anonymisation
 
-TODO: description
+Here we use a LLM to anonymize sensitive data from the response. In that case, it replaces personnal data with coherent informations.
 
 ## Call the API
 

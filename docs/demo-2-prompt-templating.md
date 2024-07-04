@@ -1,6 +1,7 @@
 # Prompt Templating
 
-TODO: description
+This demo show how to use a template to create a prompt based on common specifications. Here we make a translator service with a generic prompt that uses expression language to extract informations from the current request (in that case from the request body).
+
 
 ## Call the API
 
