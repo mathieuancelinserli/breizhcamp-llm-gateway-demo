@@ -4,6 +4,8 @@ Here we use the LLM to hide sensitive informations to avoid data leaks. In this 
 
 ## Call the API
 
+using javascript 
+
 ```js
 const response = await fetch("https://${environment.HOST}/cleanup", {
   method: 'post',
@@ -19,8 +21,10 @@ const data = await response.json();
 console.log(data);
 ```
 
+or curl
+
 ```sh
-curl -X POST -H 'Content-Type: application/json' https://${environment.HOST}/cleanup -d '{
+curl -X POST -H 'Content-Type: application/json' 'https'://${environment.HOST}/cleanup' -d '{
   "credit_card":"4035501000000008"
 }'
 ```

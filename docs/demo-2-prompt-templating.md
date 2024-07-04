@@ -5,6 +5,8 @@ This demo show how to use a template to create a prompt based on common specific
 
 ## Call the API
 
+using javascript 
+
 ```js
 const response = await fetch("https://${environment.HOST}/template", {
   method: 'post',
@@ -21,8 +23,10 @@ const data = await response.json();
 console.log(data);
 ```
 
+or curl
+
 ```sh
-curl -X POST -H 'Content-Type: application/json' https://${environment.HOST}/template -d '{
+curl -X POST -H 'Content-Type: application/json' 'https://${environment.HOST}/template' -d '{
   "lang": "fr",
   "text": "Hello World !"
 }'

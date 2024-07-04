@@ -4,6 +4,8 @@ Here we use a LLM to anonymize sensitive data from the response. In that case, i
 
 ## Call the API
 
+using javascript 
+
 ```js
 const response = await fetch("https://${environment.HOST}/gdpr", {
   method: 'post',
@@ -23,8 +25,10 @@ const data = await response.json();
 console.log(data);
 ```
 
+or curl
+
 ```sh
-curl -X POST -H 'Content-Type: application/json' https://${environment.HOST}/gdpr -d '{
+curl -X POST -H 'Content-Type: application/json' 'https://${environment.HOST}/gdpr' -d '{
   "name": "Mathieu ANCELIN",
   "age": 38,
   "role": "speaker",

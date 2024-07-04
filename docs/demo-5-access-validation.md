@@ -4,6 +4,8 @@ Here we use the LLM to validate user access. The LLM has the full request repres
 
 ## Call the API
 
+using javascript 
+
 ```js
 const response = await fetch("https://${environment.HOST}/access", {
   headers: {
@@ -14,8 +16,10 @@ const data = await response.json();
 console.log(data);
 ```
 
+or curl
+
 ```sh
-curl -X GET -H 'Admin: true' https://${environment.HOST}/template
+curl -X GET -H 'Admin: true' 'https://${environment.HOST}/template'
 ```
 
 ## Result

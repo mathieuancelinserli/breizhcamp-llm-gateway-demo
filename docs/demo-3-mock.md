@@ -4,14 +4,18 @@ In this example, we use a LLM to generate mock data for an endpoint. This usage 
 
 ## Call the API
 
+using javascript 
+
 ```js
 const response = await fetch("https://${environment.HOST}/mock");
 const data = await response.json();
 console.log(data);
 ```
 
+or curl
+
 ```sh
-curl https://${environment.HOST}/mock'
+curl 'https://${environment.HOST}/mock'
 ```
 
 ## Result
