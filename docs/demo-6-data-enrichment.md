@@ -2,6 +2,8 @@
 
 TODO: description
 
+## Call the API
+
 ```js
 const response = await fetch("https://${environment.HOST}/enrich", {
   method: 'post',
@@ -17,4 +19,12 @@ const data = await response.json();
 console.log(data);
 ```
 
-## TODO result
+## Result
+
+```js
+{
+  "email": "mathieu.ancelin@cloud-apim.com",
+  "city": "Poitiers",
+  "country": "France"
+}
+```

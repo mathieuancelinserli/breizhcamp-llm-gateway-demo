@@ -2,8 +2,14 @@
 
 TODO: description
 
+## Call the API
+
 ```bash
 websocat https://${environment.HOST}/websockets
 ```
 
-## TODO result
+## Result
+
+```js
+TODO
+```

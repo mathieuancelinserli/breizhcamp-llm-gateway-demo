@@ -2,6 +2,8 @@
 
 TODO: description
 
+## Call the API
+
 ```js
 const response = await fetch("https://${environment.HOST}/cleanup", {
   method: 'post',
@@ -17,4 +19,10 @@ const data = await response.json();
 console.log(data);
 ```
 
-## TODO result
+## Result
+
+```js
+{
+  "credit_card": "************0008 (Visa)"
+}
+```

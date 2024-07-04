@@ -2,6 +2,8 @@
 
 TODO: description
 
+## Call the API
+
 ```js
 const response = await fetch("https://${environment.HOST}/gdpr", {
   method: 'post',
@@ -21,4 +23,14 @@ const data = await response.json();
 console.log(data);
 ```
 
-## TODO result
+## Result
+
+```js
+{
+  "name": "John Doe",
+  "age": 30,
+  "role": "developer",
+  "languages": ["python", "c++", "swift", "ruby"],
+  "email": "john.doe@example.com"
+}
+```
