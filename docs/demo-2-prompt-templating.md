@@ -21,6 +21,13 @@ const data = await response.json();
 console.log(data);
 ```
 
+```sh
+curl -X POST -H 'Content-Type: application/json' https://${environment.HOST}/template -d '{
+  "lang": "fr",
+  "text": "Hello World !"
+}'
+```
+
 ## Result
 
 ```js

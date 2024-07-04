@@ -10,6 +10,10 @@ const data = await response.json();
 console.log(data);
 ```
 
+```sh
+curl https://${environment.HOST}/mock'
+```
+
 ## Result
 
 ```js

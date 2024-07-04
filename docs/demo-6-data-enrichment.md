@@ -19,6 +19,13 @@ const data = await response.json();
 console.log(data);
 ```
 
+```sh
+curl -X POST -H 'Content-Type: application/json' https://${environment.HOST}/enrich -d '{
+  "email": "mathieu.ancelin@cloud-apim.com",
+  "city": "Poitiers"
+}'
+```
+
 ## Result
 
 ```js

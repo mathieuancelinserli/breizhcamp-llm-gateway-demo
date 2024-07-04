@@ -19,6 +19,12 @@ const data = await response.json();
 console.log(data);
 ```
 
+```sh
+curl -X POST -H 'Content-Type: application/json' https://${environment.HOST}/cleanup -d '{
+  "credit_card":"4035501000000008"
+}'
+```
+
 ## Result
 
 ```js

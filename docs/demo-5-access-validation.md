@@ -14,6 +14,10 @@ const data = await response.json();
 console.log(data);
 ```
 
+```sh
+curl -X GET -H 'Admin: true' https://${environment.HOST}/template
+```
+
 ## Result
 
 ```js

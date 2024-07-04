@@ -23,6 +23,16 @@ const data = await response.json();
 console.log(data);
 ```
 
+```sh
+curl -X POST -H 'Content-Type: application/json' https://${environment.HOST}/gdpr -d '{
+  "name": "Mathieu ANCELIN",
+  "age": 38,
+  "role": "speaker",
+  "languages": ["scala", "java", "javascript", "rust"],
+  "email": "mathieu.ancelin@cloud-apim.com"
+}'
+```
+
 ## Result
 
 ```js

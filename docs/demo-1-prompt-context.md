@@ -24,6 +24,17 @@ const data = await response.json();
 console.log(data);
 ```
 
+```sh
+curl -X POST -H 'Content-Type: application/json' https://${environment.HOST}/context -d '{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Can you tell me more about the Cloud APIM company ?"
+    }
+  ]
+}'
+```
+
 ## Result
 
 ```js
