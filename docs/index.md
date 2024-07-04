@@ -1,6 +1,6 @@
 # Otoroshi LLM Extension in action - Cloud APIM Serverless
 
-TODO: description
+this API demonstrate how to use the [Otoroshi LLM Extension](#) in a Cloud APIM Serverless project. The Otoroshi LLM Extension provide tools and plugins to use LLM easily in your projects no matter what provider you're using (on premise, cloud, openai, anthropic, mistral, etc). 
 
 the API hosting this demo is located at
 
@@ -13,6 +13,8 @@ curl https://${environment.HOST}
 the source code for this project is available on [Cloud APIM's Github](https://github.com/cloud-apim/otoroshi-llm-extension-serverless). You can fork it and modify it for your own needs.
 
 ## Demo steps
+
+the project is organized around several steps, one for each possible use case (non exhaustive). The first 2 steps shows how to use otoroshi to consume an LLM API et expose it to your applications in a consistant way no matter what provider is used. The other steps shows how a LLM API can help you configuring your API gateway using natural language.
 
 - [Prompt context](/docs/demo-1-prompt-context.html)
 - [Prompt templating](/docs/demo-2-prompt-templating.html)
