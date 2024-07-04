@@ -24,7 +24,7 @@ console.log(data);
 or curl
 
 ```sh
-curl -X POST -H 'Content-Type: application/json' 'https://${environment.HOST}/enrich' -d '{
+curl -X POST -H 'Content-Type: application/json' "https://${environment.HOST}/enrich" -d '{
   "email": "mathieu.ancelin@cloud-apim.com",
   "city": "Poitiers"
 }'

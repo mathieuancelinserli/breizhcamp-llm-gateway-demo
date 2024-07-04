@@ -29,7 +29,7 @@ console.log(data);
 or curl
 
 ```sh
-curl -X POST -H 'Content-Type: application/json' 'https://${environment.HOST}/context' -d '{
+curl -X POST -H 'Content-Type: application/json' "https://${environment.HOST}/context" -d '{
   "messages": [
     {
       "role": "user",

@@ -19,7 +19,7 @@ console.log(data);
 or curl
 
 ```sh
-curl -X GET -H 'Admin: true' 'https://${environment.HOST}/template'
+curl -X GET -H 'Admin: true' "https://${environment.HOST}/access"
 ```
 
 ## Result

@@ -15,7 +15,7 @@ console.log(data);
 or curl
 
 ```sh
-curl 'https://${environment.HOST}/mock'
+curl "https://${environment.HOST}/mock"
 ```
 
 ## Result

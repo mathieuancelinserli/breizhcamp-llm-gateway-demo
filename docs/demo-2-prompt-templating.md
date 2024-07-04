@@ -26,7 +26,7 @@ console.log(data);
 or curl
 
 ```sh
-curl -X POST -H 'Content-Type: application/json' 'https://${environment.HOST}/template' -d '{
+curl -X POST -H 'Content-Type: application/json' "https://${environment.HOST}/template" -d '{
   "lang": "fr",
   "text": "Hello World !"
 }'

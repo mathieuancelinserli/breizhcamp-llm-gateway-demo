@@ -28,7 +28,7 @@ console.log(data);
 or curl
 
 ```sh
-curl -X POST -H 'Content-Type: application/json' 'https://${environment.HOST}/gdpr' -d '{
+curl -X POST -H 'Content-Type: application/json' "https://${environment.HOST}/gdpr" -d '{
   "name": "Mathieu ANCELIN",
   "age": 38,
   "role": "speaker",
