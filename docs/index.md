@@ -5,7 +5,7 @@ this API demonstrate how to use the [Otoroshi LLM Extension](https://github.com/
 the API hosting this demo is located at
 
 ```sh
-curl https://${environment.HOST}
+https://${environment.HOST}
 ```
 
 ## Source code
