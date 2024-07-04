@@ -10,7 +10,7 @@ https://${environment.HOST}
 
 ## Source code
 
-the source code for this project is available on [Cloud APIM's Github](https://github.com/cloud-apim/otoroshi-llm-extension-serverless). You can fork it and modify it for your own needs.
+the source code for this project is available on [Cloud APIM's Github](https://github.com/cloud-apim/otoroshi-llm-extension-serverless-example). You can fork it and modify it for your own needs.
 
 ## Demo steps
 

@@ -1,6 +1,6 @@
 # Add context to your API
 
-This demo show how to add context, configuration, etc, to your prompts. Here we use gpt-3.5 turbo for this demo. This model is too old to have informations about Cloud APIM so we added a [context](https://github.com/cloud-apim/otoroshi-llm-extension-serverless/blob/main/entities/ai.json#L52) for this prompt and Chat GPT is now able to explain what Cloud APIM is.
+This demo show how to add context, configuration, etc, to your prompts. Here we use gpt-3.5 turbo for this demo. This model is too old to have informations about Cloud APIM so we added a [context](https://github.com/cloud-apim/otoroshi-llm-extension-serverless-example/blob/main/entities/ai.json#L52) for this prompt and Chat GPT is now able to explain what Cloud APIM is.
 
 ## Call the API
 
