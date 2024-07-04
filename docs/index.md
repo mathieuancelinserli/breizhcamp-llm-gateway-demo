@@ -2,13 +2,15 @@
 
 TODO: description
 
-TODO: video
-
 the API hosting this demo is located at
 
 ```sh
 curl https://${environment.HOST}
 ```
+
+## Source code
+
+the source code for this project is available on [Cloud APIM's Github](https://github.com/cloud-apim/otoroshi-llm-extension-serverless). You can fork it and modify it for your own needs.
 
 ## Demo steps
 
@@ -24,4 +26,8 @@ curl https://${environment.HOST}
 
 ## API Spec
 
-the spec of this API is available [here](/docs/api-ref)
+the OpenAPI spec of this API is available [here](/docs/openapi.json) and the viewer for this spec is available [here](/docs/api-ref)
+
+## Conference
+
+this project is based on a conference given by [Mathieu](https://github.com/mathieuancelin) at [Breizhcamp 2024](https://www.breizhcamp.org/)

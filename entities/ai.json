@@ -41,7 +41,7 @@
 			"tenant": "default",
 			"teams": ["default"]
 		},
-		"id": "context-breizhcamp",
+		"id": "context-cloudapim",
 		"name": "Cloud APIM",
 		"description": "",
 		"metadata": {},
