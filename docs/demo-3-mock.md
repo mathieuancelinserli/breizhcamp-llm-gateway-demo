@@ -1,6 +1,6 @@
 # Mock Responses
 
-TODO: description
+In this example, we use a LLM to generate mock data for an endpoint. This usage could be useful in case you need to start to create an app before an api is available. The LLM will be able to generate structured data based on your specifications written in natural language.
 
 ## Call the API
 
