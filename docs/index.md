@@ -31,3 +31,7 @@ the OpenAPI spec of this API is available [here](/docs/openapi.json) and the vie
 ## Conference
 
 this project is based on a conference given by [Mathieu](https://github.com/mathieuancelin) at [Breizhcamp 2024](https://www.breizhcamp.org/)
+
+## Otoroshi managed instances
+
+if you want to achieve the same thing using your own otoroshi instance (on Cloud APIM or on premise), you can use the [following configuration file](/docs/otoroshi-managed.yaml) in the `otoroshi resource loader`. Do not forget to change the domain names in the routes to match yours and to add an OpenAI token in the local vault named `openai-token`
