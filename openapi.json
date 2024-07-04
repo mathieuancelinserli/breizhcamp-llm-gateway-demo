@@ -294,7 +294,7 @@
           "$ref": "#/components/x-cloud-apim-plugins/enrich"
         },
         "x-cloud-apim-backend": {
-          "$ref": "#/components/x-cloud-apim-backends/mirror"
+          "$ref": "#/components/x-cloud-apim-backends/bodymirror"
         }
       }
     },
@@ -343,7 +343,7 @@
           }
         },
         "x-cloud-apim-backend": {
-          "$ref": "#/components/x-cloud-apim-backends/mirror"
+          "$ref": "#/components/x-cloud-apim-backends/bodymirror"
         },
         "x-cloud-apim-plugins": {
           "$ref": "#/components/x-cloud-apim-plugins/cleanup"
@@ -436,7 +436,7 @@
           }
         },
         "x-cloud-apim-backend": {
-          "$ref": "#/components/x-cloud-apim-backends/mirror"
+          "$ref": "#/components/x-cloud-apim-backends/bodymirror"
         },
         "x-cloud-apim-plugins": {
           "$ref": "#/components/x-cloud-apim-plugins/gdpr"
