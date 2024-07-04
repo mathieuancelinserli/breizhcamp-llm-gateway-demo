@@ -723,6 +723,17 @@
         "root": "/",
         "rewrite": false
       },
+      "bodymirror": {
+        "targets": [
+          {
+            "hostname": "bodymirror.otoroshi.io",
+            "port": 443,
+            "tls": true
+          }
+        ],
+        "root": "/",
+        "rewrite": false
+      },
       "websocket": {
         "targets": [
           {
